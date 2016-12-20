@@ -14,16 +14,21 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     
+    // tasks: A property for the view controller class that holds the class variables
+    // Array of task objects
+    
     var tasks : [Task] = []
 
     
-    
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // = self looks to the classes in the TaskViewController
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -38,6 +43,9 @@ class TasksViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
+    
+    // We're creating an "object" with UITableView "class"
+    // let task: gives us a task "object"
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
